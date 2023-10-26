@@ -45,6 +45,7 @@ FUNCTION yhr_generate_luhn_number.
 
   lv_digit = ( 10 - ( lv_sum MOD 10 ) ) MOD 10.
 
+* Add the last 9th digit
   DATA(lv_digit_str) = CONV string( lv_digit ).
   CONDENSE lv_digit_str NO-GAPS.
   ev_number = ev_number && lv_digit_str.
