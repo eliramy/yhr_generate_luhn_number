@@ -13,9 +13,9 @@ FUNCTION yhr_generate_luhn_number.
 
   TRY.
 
-      DATA(lo_number) = cl_abap_random_int=>create( seed = CONV i( sy-uzeit ) " Initial Value of PRNG
-                                                    min  = 00000000           " Lower Limit for Value Area
-                                                    max  = 99999999 ).        " Upper Limit for Value Area
+      DATA(lo_number) = cl_abap_random_int=>create( seed = cl_abap_random=>seed( ) " Random Seed Number
+                                                    min  = 00000000                " Lower Limit for Value Area
+                                                    max  = 99999999 ).             " Upper Limit for Value Area
     CATCH cx_abap_random.
       RETURN.
   ENDTRY.
